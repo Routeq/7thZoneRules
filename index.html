@@ -22,6 +22,7 @@
             --accent-soft: #ff7c70;
             --ink: #0a0e18;
             --bg-image: url("/7th-background.png");
+            --logo-image: url("/7thZoneRules/Logo/7thlogo.png");
             --radius-xl: 16px;
             --radius-lg: 12px;
             --radius-pill: 999px;
@@ -54,13 +55,13 @@
             inset: 0;
             pointer-events: none;
             background:
-                linear-gradient(180deg, #02040c8f 0%, #02050dae 52%, #02040ce0 100%),
-                radial-gradient(circle at 18% 8%, #ea443f33 0%, #0000 34%),
-                radial-gradient(circle at 84% 16%, #3559ff26 0%, #0000 40%),
+                linear-gradient(180deg, #02040c66 0%, #02050d8a 52%, #02040cb3 100%),
+                radial-gradient(circle at 18% 8%, #ea443f47 0%, #0000 38%),
+                radial-gradient(circle at 84% 16%, #3559ff2e 0%, #0000 46%),
                 var(--bg-image) center/cover no-repeat;
             background-attachment: fixed, fixed, fixed, fixed;
-            opacity: 0.8;
-            filter: saturate(1.08) contrast(1.08);
+            opacity: 0.94;
+            filter: saturate(1.16) contrast(1.12) brightness(1.04);
         }
 
         body::after {
@@ -70,10 +71,11 @@
             pointer-events: none;
             background:
                 radial-gradient(circle at 50% 38%, #00000000 0 220px, #0000009e 70%, #000000d8 100%),
+                var(--logo-image) center 10% / min(64vw, 680px) no-repeat,
                 repeating-linear-gradient(118deg, #ffffff08 0 2px, #0000 2px 52px),
                 repeating-linear-gradient(26deg, #ffffff06 0 1px, #0000 1px 66px);
             mix-blend-mode: soft-light;
-            opacity: 0.38;
+            opacity: 0.28;
             animation: drift 14s ease-in-out infinite alternate;
         }
 
@@ -120,21 +122,40 @@
 
         .header {
             padding: clamp(0.9rem, 2vw, 1.4rem);
+            position: relative;
         }
 
         .badge {
-            width: 76px;
-            height: 88px;
-            margin-bottom: 0.8rem;
-            transform: rotate(-8deg);
-            filter: drop-shadow(0 0 22px #cc2e2e5e);
+            width: clamp(102px, 12vw, 126px);
+            aspect-ratio: 1;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            padding: 7px;
+            position: relative;
+            background: linear-gradient(145deg, #ffffff40, #8f98a62a 34%, #ef3f3557 100%);
+            box-shadow: 0 0 0 1px #ffffff2e, 0 18px 38px #0000008f;
+            isolation: isolate;
+        }
+
+        .badge::before {
+            content: "";
+            position: absolute;
+            inset: -24px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ea443f52 0, #ea443f00 68%);
+            filter: blur(8px);
+            z-index: -1;
         }
 
         .badge img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            object-position: center;
             display: block;
+            border-radius: 50%;
+            border: 2px solid #090d17;
+            background: #04060d;
         }
 
         h1 {
