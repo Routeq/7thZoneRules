@@ -21,6 +21,7 @@
             --glow: #ea443f;
             --accent-soft: #ff7c70;
             --ink: #0a0e18;
+            --bg-image: url("/7th-background.png");
             --radius-xl: 16px;
             --radius-lg: 12px;
             --radius-pill: 999px;
@@ -42,10 +43,7 @@
         body {
             font-family: "Chakra Petch", sans-serif;
             color: var(--text-main);
-            background:
-                radial-gradient(circle at 14% 2%, #5c12129e 0, #11040600 35%),
-                radial-gradient(circle at 78% 22%, #1b2034 0, #080c1800 48%),
-                linear-gradient(180deg, #020208 0%, #020207 45%, #03040a 100%);
+            background: linear-gradient(180deg, #010207 0%, #02040c 55%, #010207 100%);
             overflow-x: hidden;
             position: relative;
         }
@@ -55,23 +53,28 @@
             position: fixed;
             inset: 0;
             pointer-events: none;
-            background-image: radial-gradient(#ffffff0f 0.6px, transparent 0.6px);
-            background-size: 3px 3px;
-            opacity: 0.25;
-            mix-blend-mode: soft-light;
+            background:
+                linear-gradient(180deg, #02040c8f 0%, #02050dae 52%, #02040ce0 100%),
+                radial-gradient(circle at 18% 8%, #ea443f33 0%, #0000 34%),
+                radial-gradient(circle at 84% 16%, #3559ff26 0%, #0000 40%),
+                var(--bg-image) center/cover no-repeat;
+            background-attachment: fixed, fixed, fixed, fixed;
+            opacity: 0.8;
+            filter: saturate(1.08) contrast(1.08);
         }
 
         body::after {
             content: "";
             position: fixed;
-            inset: -30vh -20vw auto;
-            height: 55vh;
+            inset: 0;
             pointer-events: none;
             background:
-                radial-gradient(circle at 20% 30%, #ea443f30 0, #ea443f00 50%),
-                radial-gradient(circle at 66% 22%, #4062ff26 0, #4062ff00 55%);
-            filter: blur(22px);
-            animation: drift 12s ease-in-out infinite alternate;
+                radial-gradient(circle at 50% 38%, #00000000 0 220px, #0000009e 70%, #000000d8 100%),
+                repeating-linear-gradient(118deg, #ffffff08 0 2px, #0000 2px 52px),
+                repeating-linear-gradient(26deg, #ffffff06 0 1px, #0000 1px 66px);
+            mix-blend-mode: soft-light;
+            opacity: 0.38;
+            animation: drift 14s ease-in-out infinite alternate;
         }
 
         .shell {
@@ -85,7 +88,8 @@
             animation: shell-in 0.7s ease-out both;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(3px);
+            z-index: 1;
+            backdrop-filter: blur(5px) saturate(1.03);
         }
 
         .shell::before {
@@ -610,7 +614,11 @@
     <main class="shell" id="top">
         <header class="header">
             <div class="badge">
-                <img src="/7thlogo.png" alt="7thzone logo">
+                <img
+                    src="/7thZoneRules/Logo/7thlogo.png"
+                    alt="7thzone logo"
+                    onerror="if(this.dataset.fallback!=='1'){this.dataset.fallback='1';this.src='7thZoneRules/Logo/7thlogo.png';}else if(this.dataset.fallback!=='2'){this.dataset.fallback='2';this.src='/7thlogo.png';}else if(this.dataset.fallback!=='3'){this.dataset.fallback='3';this.src='/content.png';}"
+                >
             </div>
             <p class="kicker">Official Server Policy</p>
             <h1>7thzone Roleplay • Rules // Guidelines</h1>
