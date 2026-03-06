@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7th Zone Roleplay Rules // Guidelines</title>
+    <title>7thzone Roleplay Rules // Guidelines</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -119,35 +119,18 @@
         }
 
         .badge {
-            width: 70px;
-            height: 82px;
+            width: 76px;
+            height: 88px;
             margin-bottom: 0.8rem;
-            position: relative;
             transform: rotate(-8deg);
             filter: drop-shadow(0 0 22px #cc2e2e5e);
         }
 
-        .badge::before,
-        .badge::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-        }
-
-        .badge::before {
-            background:
-                radial-gradient(circle at 22% 18%, #ff8d8d 0 4px, #0000 5px),
-                radial-gradient(circle at 71% 26%, #ff8d8d 0 3px, #0000 4px),
-                linear-gradient(145deg, #ff4f46 0%, #9e1015 70%);
-            clip-path: polygon(50% 0%, 94% 12%, 88% 62%, 50% 100%, 12% 62%, 6% 12%);
-            border: 1px solid #ee6d6d66;
-        }
-
-        .badge::after {
-            border: 1px solid #ffffff26;
-            clip-path: polygon(50% 8%, 86% 18%, 80% 58%, 50% 90%, 20% 58%, 14% 18%);
-            opacity: 0.9;
+        .badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         h1 {
@@ -626,9 +609,11 @@
 <body>
     <main class="shell" id="top">
         <header class="header">
-            <div class="badge" aria-hidden="true"></div>
+            <div class="badge">
+                <img src="/7thlogo.png" alt="7thzone logo">
+            </div>
             <p class="kicker">Official Server Policy</p>
-            <h1>7th Zone Roleplay • Rules // Guidelines</h1>
+            <h1>7thzone Roleplay • Rules // Guidelines</h1>
 
             <section class="intro" aria-label="Overview">
                 <div class="intro-top">
@@ -720,7 +705,7 @@
                         <p>
                             When a player's actions or conduct negatively impact another player's roleplay
                             experience and/or undermine the realistic atmosphere we strive to create on
-                            7th Zone Roleplay, admins have authority to punish that player for violations
+                            7thzone Roleplay, admins have authority to punish that player for violations
                             not explicitly listed below.
                         </p>
                         <p>
@@ -1138,7 +1123,7 @@
             </div>
         </section>
 
-        <p class="note">7th Zone Roleplay Community Standards - Updated March 2026</p>
+        <p class="note">7thzone Roleplay Community Standards - Updated March 2026</p>
     </main>
 
 </body>
